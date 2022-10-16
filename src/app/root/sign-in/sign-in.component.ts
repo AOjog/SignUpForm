@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {ConfirmedValidator} from "../confirmed.validator";
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'sign-in',
@@ -11,6 +13,7 @@ export class SignInComponent implements OnInit {
   signInForm:any;
   constructor(
     private formBuilder: FormBuilder,
+    private router: Router,
 ) { }
 
   ngOnInit() {
@@ -20,13 +23,14 @@ export class SignInComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
       confirmPassword: ['', [Validators.required, Validators.minLength(8)]],
+      checkbox: ['', [Validators.requiredTrue]],
     },{
       validator: ConfirmedValidator('password', 'confirmPassword')
     });
   }
   onSubmit(){
     if(this.signInForm.valid){
-      alert('Thank you for your registration!')
+      this.router.navigate(['users-list']);
     } else {
       alert('User form is not valid!!')
     }
