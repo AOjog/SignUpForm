@@ -3,8 +3,8 @@ import {FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'log-in',
-  templateUrl: './logIn.component.html',
-  styleUrls: ['./logIn.component.css']
+  templateUrl: './log-in.component.html',
+  styleUrls: ['./log-in.component.css']
 })
 export class LogInComponent implements OnInit {
   logInForm:any;

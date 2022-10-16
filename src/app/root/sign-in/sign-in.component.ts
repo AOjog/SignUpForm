@@ -4,8 +4,8 @@ import {ConfirmedValidator} from "../confirmed.validator";
 
 @Component({
   selector: 'sign-in',
-  templateUrl: './signIn.component.html',
-  styleUrls: ['./signIn.component.css']
+  templateUrl: './sign-in.component.html',
+  styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
   signInForm:any;

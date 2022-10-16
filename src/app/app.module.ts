@@ -3,11 +3,11 @@ import {NgModule} from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {SignInComponent} from './root/SignIn/signIn.component';
+import {SignInComponent} from './root/sign-in/sign-in.component';
 import {AppRoutingModule} from './app-routing.module';
-import {PrivacyPolicyComponent} from "./root/PrivacyPolicy/privacyPolicy.component";
-import {LogInComponent} from "./root/LogIn/logIn.component";
-import { AppComponent } from './app-component/app.component';
+import {PrivacyPolicyComponent} from "./root/privacy-policy/privacy-policy.component";
+import {LogInComponent} from "./root/log-in/log-in.component";
+import {AppComponent} from './app-component/app.component';
 
 @NgModule({
   declarations: [SignInComponent, PrivacyPolicyComponent, LogInComponent, AppComponent],
