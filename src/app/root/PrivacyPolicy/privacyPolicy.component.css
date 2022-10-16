@@ -1,0 +1,13 @@
+#imagePrivacyPolicy {
+  width: 100%;
+  border-radius: 10px;
+}
+.privacyPolicyText {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  text-align: justify;
+}
+.textDecoration:link  {
+  text-decoration: none;
+}
