@@ -90,7 +90,8 @@
                                     (click)="modal.dismiss('Cross click')"></button>
                           </div>
                           <div class="modal-footer">
-                            <button class="btn btn-danger" (click)="deleteUser(i)">Delete</button>
+                            <button class="btn btn-danger" (click)="deleteUser(i) ; modal.close('Save click')">Delete
+                            </button>
                             <button type="button" class="btn btn-outline-dark" (click)="modal.close('No')">No
                             </button>
                           </div>
