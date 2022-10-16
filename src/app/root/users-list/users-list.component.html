@@ -7,12 +7,11 @@
             <div class="row justify-content-center">
               <div class="col-md-12 col-lg-9 col-xl-8 order-2 order-lg-1">
 
-
-
                 <ng-template #content let-modal>
                   <div class="modal-header">
-                    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
-                    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+                    <h4 class="modal-title" id="modal-basic-title">Add user</h4>
+                    <button type="button" class="btn-close" aria-label="Close"
+                            (click)="modal.dismiss('Cross click')"></button>
                   </div>
                   <div class="modal-body">
                     <form [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
@@ -84,7 +83,19 @@
                       <td>{{user.email}}</td>
                       <td>{{user.password}}</td>
                       <td>
-                        <button class="btn btn-danger" (click)="deleteUser(i)">Delete</button>
+                        <ng-template #content let-modal>
+                          <div class="modal-header">
+                            <h4 class="modal-title" id="modal-alert">Are you sure?</h4>
+                            <button type="button" class="btn-close" aria-label="Close"
+                                    (click)="modal.dismiss('Cross click')"></button>
+                          </div>
+                          <div class="modal-footer">
+                            <button class="btn btn-danger" (click)="deleteUser(i)">Delete</button>
+                            <button type="button" class="btn btn-outline-dark" (click)="modal.close('No')">No
+                            </button>
+                          </div>
+                        </ng-template>
+                        <button class="btn btn-danger" (click)="open(content)">Delete</button>
                     </tr>
                     </tbody>
                   </table>

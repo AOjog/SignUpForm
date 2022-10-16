@@ -41,6 +41,7 @@ export class UsersListComponent implements OnInit {
 
   public deleteUser(index: number) {
     this.userList.splice(index, 1);
+
   }
   onSubmit() {
     if (this.addUserForm.valid) {
