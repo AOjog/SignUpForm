@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
-import {SecurityService} from "../../security.service";
+import { Router } from '@angular/router';
+import {AuthService} from "../../auth.service";
 
 @Component({
   selector: 'log-in',
@@ -11,19 +12,20 @@ export class LogInComponent implements OnInit {
   logInForm:any;
   constructor(
     private formBuilder: FormBuilder,
-    private securityService: SecurityService,
+    private securityService: AuthService,
+    private router: Router,
 ) { }
 
   ngOnInit() {
     this.logInForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
+      password: ['', [Validators.required, Validators.minLength(4)]],
     });
   }
   onSubmit(){
     if(this.logInForm.valid){
       this.securityService.logIn(this.logInForm.value.email, this.logInForm.value.password);//here we make a request to backend side
-      alert('Log In is valid!!')
+      this.router.navigate(['users-list']);
     }
   }
 }

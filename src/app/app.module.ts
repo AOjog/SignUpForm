@@ -11,13 +11,14 @@ import {AppComponent} from './app-component/app.component';
 import {UsersListComponent} from './root/users-list/users-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import {AccountService} from "./account.service";
-import {SecurityService} from "./security.service";
+import {AuthService} from "./auth.service";
 import {UserService} from "./user.service";
+import { PageNotFoundComponent } from './root/page-not-found/page-not-found.component';
 
 @NgModule({
-  declarations: [SignUpComponent, PrivacyPolicyComponent, LogInComponent, AppComponent, UsersListComponent],
+  declarations: [SignUpComponent, PrivacyPolicyComponent, LogInComponent, AppComponent, UsersListComponent, PageNotFoundComponent],
   imports: [BrowserModule, ReactiveFormsModule, NgbModule, AppRoutingModule, HttpClientModule],
-  providers: [AccountService,SecurityService, UserService],
+  providers: [AccountService,AuthService, UserService, ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

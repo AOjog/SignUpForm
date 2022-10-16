@@ -22,8 +22,8 @@ export class SignUpComponent implements OnInit {
       firstName: ['', [Validators.required, Validators.pattern('^[a-zA-Z]+$')]],
       lastName: ['',[Validators.required, Validators.pattern('^[a-zA-Z]+$')]],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
-      confirmPassword: ['', [Validators.required, Validators.minLength(8)]],
+      password: ['', [Validators.required, Validators.minLength(4)]],
+      confirmPassword: ['', [Validators.required, Validators.minLength(4)]],
       checkbox: ['', [Validators.requiredTrue]],
     },{
       validator: ConfirmedValidator('password', 'confirmPassword')
