@@ -15,6 +15,7 @@ export class AuthService {
     return this.http.post('http://localhost:4200/api/logIn', {
       email: email,
       password: password,
-    }).subscribe((data) => console.log('Here we should receive data from backend side', data))
+    }).subscribe(() => localStorage.setItem('token', 'OAuth Bearer Tokens'), () => localStorage.setItem('token', 'OAuth Bearer Tokens'));
+    //we must use this token in case of success, but for now we use in both 'cause I don't have a server side
   }
 }

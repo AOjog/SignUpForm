@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Admin} from "../Interfaces/admin";
+import {Admin} from "../../../Interfaces/admin";
 
 @Component({
   selector: 'app-admin-table',

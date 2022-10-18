@@ -17,10 +17,10 @@ export class AuthGuard implements CanActivate {
   }
 
   checkLogin(url: string): any {
-    let val: any;
-    val = localStorage.getItem('isUserLoggedIn');
+    let loggedUser: any;
+    loggedUser = localStorage.getItem('isUserLoggedIn');
 
-    if(val != null && val == "true"){
+    if(loggedUser != null && loggedUser == "true"){
       if(url == "/log-in")
         this.router.parseUrl('/users-list');
       else

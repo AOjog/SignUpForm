@@ -9,18 +9,24 @@ import {PrivacyPolicyComponent} from "./root/privacy-policy/privacy-policy.compo
 import {LogInComponent} from "./root/log-in/log-in.component";
 import {AppComponent} from './app-component/app.component';
 import {UsersListComponent} from './root/users-list/users-list.component';
-import { HttpClientModule } from '@angular/common/http';
+import {HttpClientModule} from '@angular/common/http';
 import {AccountService} from "./account.service";
 import {AuthService} from "./auth.service";
 import {UserService} from "./user.service";
-import { PageNotFoundComponent } from './root/page-not-found/page-not-found.component';
-import { InfoComponent } from './root/users-list/info/info.component';
-import { AdminTableComponent } from './admin-table/admin-table.component';
+import {PageNotFoundComponent} from './root/page-not-found/page-not-found.component';
+import {InfoComponent} from './root/users-list/info/info.component';
+import {AdminTableComponent} from './root/users-list/admin-table/admin-table.component';
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {AuthInterceptorService} from "./auth-interceptor-service.interceptor";
 
 @NgModule({
   declarations: [SignUpComponent, PrivacyPolicyComponent, LogInComponent, AppComponent, UsersListComponent, PageNotFoundComponent, InfoComponent, AdminTableComponent],
   imports: [BrowserModule, ReactiveFormsModule, NgbModule, AppRoutingModule, HttpClientModule],
-  providers: [AccountService,AuthService, UserService, ],
+  providers: [AccountService, AuthService, UserService,
+    {
+      provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
