@@ -15,12 +15,12 @@ import {AuthService} from "./auth.service";
 import {UserService} from "./user.service";
 import {PageNotFoundComponent} from './root/page-not-found/page-not-found.component';
 import {InfoComponent} from './root/users-list/info/info.component';
-import {AdminTableComponent} from './root/users-list/admin-table/admin-table.component';
+import {AdminListComponent} from './root/users-list/admin-list/admin-list.component';
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {AuthInterceptorService} from "./auth-interceptor-service.interceptor";
 
 @NgModule({
-  declarations: [SignUpComponent, PrivacyPolicyComponent, LogInComponent, AppComponent, UsersListComponent, PageNotFoundComponent, InfoComponent, AdminTableComponent],
+  declarations: [SignUpComponent, PrivacyPolicyComponent, LogInComponent, AppComponent, UsersListComponent, PageNotFoundComponent, InfoComponent, AdminListComponent],
   imports: [BrowserModule, ReactiveFormsModule, NgbModule, AppRoutingModule, HttpClientModule],
   providers: [AccountService, AuthService, UserService,
     {

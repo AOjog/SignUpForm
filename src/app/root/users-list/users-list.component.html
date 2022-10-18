@@ -108,7 +108,7 @@
                     <table class="table table-striped">
                       <tbody>
                       <tr *ngFor="let admin of adminList; let i = index" [attr.data-index]="i">
-                        <app-admin-table [adminList]="admin"></app-admin-table>
+                        <ol><app-admin-list [adminList]="admin"></app-admin-list></ol>
                       </tr>
                       </tbody>
                     </table>

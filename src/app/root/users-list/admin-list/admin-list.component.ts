@@ -2,11 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import {Admin} from "../../../Interfaces/admin";
 
 @Component({
-  selector: 'app-admin-table',
-  templateUrl: './admin-table.component.html',
-  styleUrls: ['./admin-table.component.css']
+  selector: 'app-admin-list',
+  templateUrl: './admin-list.component.html',
+  styleUrls: ['./admin-list.component.css']
 })
-export class AdminTableComponent implements OnInit {
+export class AdminListComponent implements OnInit {
   @Input() adminList!:Admin;
 
   constructor() { }

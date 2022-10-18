@@ -10,8 +10,8 @@ export class AuthService {
   }
 
   logIn(email: string, password: string) {
-    const isUserLoggedIn = email == 'admin@a.a' && password == 'admin';
-    localStorage.setItem('isUserLoggedIn', isUserLoggedIn ? "true" : "false");
+    const isAdmin = email == 'admin@a.a' && password == 'admin';
+    localStorage.setItem('isAdmin', isAdmin ? "true" : "false");
     return this.http.post('http://localhost:4200/api/logIn', {
       email: email,
       password: password,
