@@ -1,5 +1,5 @@
-# Sign Up form
-[]: # Author: [Alina Scerbatiuc/Ojog]
+# Sign Up form 
+# Author: [Alina Scerbatiuc/Ojog]
 
 **Sign Up form**
 
