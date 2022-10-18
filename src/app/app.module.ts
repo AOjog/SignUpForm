@@ -14,9 +14,11 @@ import {AccountService} from "./account.service";
 import {AuthService} from "./auth.service";
 import {UserService} from "./user.service";
 import { PageNotFoundComponent } from './root/page-not-found/page-not-found.component';
+import { InfoComponent } from './root/users-list/info/info.component';
+import { AdminTableComponent } from './admin-table/admin-table.component';
 
 @NgModule({
-  declarations: [SignUpComponent, PrivacyPolicyComponent, LogInComponent, AppComponent, UsersListComponent, PageNotFoundComponent],
+  declarations: [SignUpComponent, PrivacyPolicyComponent, LogInComponent, AppComponent, UsersListComponent, PageNotFoundComponent, InfoComponent, AdminTableComponent],
   imports: [BrowserModule, ReactiveFormsModule, NgbModule, AppRoutingModule, HttpClientModule],
   providers: [AccountService,AuthService, UserService, ],
   bootstrap: [AppComponent]

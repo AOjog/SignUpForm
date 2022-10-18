@@ -64,6 +64,7 @@
 
                 <pre>{{ closeResult }}</pre>
 
+                <app-info [admin]="adminName"></app-info>
                 <h3 class="p-3 text-center">Users</h3>
                 <div class="container">
                   <table class="table table-striped table-bordered">
@@ -100,7 +101,18 @@
                     </tr>
                     </tbody>
                   </table>
+
                   <p><a routerLink="/404" routerLinkActive="active"> Next page &rarr; </a></p>
+                  <h3 class="p-3">Admins</h3>
+                  <div class="container">
+                    <table class="table table-striped">
+                      <tbody>
+                      <tr *ngFor="let admin of adminList; let i = index" [attr.data-index]="i">
+                        <app-admin-table [adminList]="admin"></app-admin-table>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
 
                 </div>
               </div>
